@@ -52,6 +52,14 @@ declare module "styled-components" {
 }
 
 /**
+ * Default styled component Props
+ */
+
+export interface DefaultStyleProps {
+  theme: DefaultTheme;
+}
+
+/**
  * Requests to the Tmdb Api and images types
  */
 

@@ -97,8 +97,6 @@ const useFetch = <T>(url: string, page: number = 1) => {
     };
   }, [url, page]);
 
-  console.log("state", state);
-
   return state;
 };
 
