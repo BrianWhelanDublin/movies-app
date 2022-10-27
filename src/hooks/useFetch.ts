@@ -15,7 +15,7 @@ type Action =
   | { type: "error"; payload: Error }
   | { type: "reset" };
 
-const useQuery = <T>(url: string, page: number = 1) => {
+const useFetch = <T>(url: string, page: number = 1) => {
   const cache = useRef<Cache>({});
 
   const cancelRequest = useRef<boolean>(false);
@@ -97,5 +97,9 @@ const useQuery = <T>(url: string, page: number = 1) => {
     };
   }, [url, page]);
 
+  console.log("state", state);
+
   return state;
 };
+
+export default useFetch;
