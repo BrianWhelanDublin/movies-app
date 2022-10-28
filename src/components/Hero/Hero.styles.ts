@@ -40,7 +40,7 @@ export const HeroContent = styled.div<DefaultStyleProps>`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 5%;
+  padding: 0 7.5%;
   position: relative;
   z-index: 2;
 `;
