@@ -4,6 +4,7 @@ import myTheme from "./styles/DefaultTheme";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages";
 import Movies from "./pages/Movies/Movies";
+import Series from "./pages/Series/Series";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
+          <Route path="/series" element={<Series />} />
         </Routes>
       </main>
     </ThemeProvider>
