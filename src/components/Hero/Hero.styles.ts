@@ -62,6 +62,7 @@ export const HeroTitle = styled.h1<DefaultStyleProps>`
   margin-bottom: 20px;
   /* word-break: break-all; */
   font-weight: 500;
+  max-width: 1200px;
 
   @media (${device.sm}) {
     font-size: 48px;
