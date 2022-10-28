@@ -66,6 +66,8 @@ export interface DefaultStyleProps {
 export interface Requests {
   baseUrl: Scalars["String"];
   trending: Scalars["String"];
+  movieGenres: Scalars["String"];
+  tvGenres: Scalars["String"];
 }
 
 export interface Images {
@@ -126,4 +128,9 @@ export interface MediaItem {
   release_date?: Maybe<Scalars["String"]>;
   title?: Maybe<Scalars["String"]>;
   video?: Maybe<Scalars["Boolean"]>;
+}
+
+export interface Genres {
+  id: Scalars["Int"];
+  name: Scalars["String"];
 }
