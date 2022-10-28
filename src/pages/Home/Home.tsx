@@ -1,7 +1,7 @@
 import { Genres, MediaItem } from "../../types/types";
 import useFetch from "../../hooks/useFetch";
 import { REQUESTS } from "../../requests/requests";
-import { Loading } from "../../components";
+import { Loading, Row } from "../../components";
 import { randomNumber } from "../../utils/helpers";
 import Hero from "../../components/Hero/Hero";
 
@@ -28,7 +28,16 @@ const Home: React.FC = () => {
       genres = movieGenres;
     }
 
-    return <Hero media={headerMedia} genres={genres} />;
+    return (
+      <>
+        <Hero media={headerMedia} genres={genres} />
+        <Row request={REQUESTS.trending} title="Trending" />
+        <Row request={REQUESTS.upcommingMovies} title="Upcomming Movies" />
+        <Row request={REQUESTS.moviesNowPlaying} title="Movies in Cinema Now" />
+        <Row request={REQUESTS.topRatedTv} title="Top Rated Tv" />
+        <Row request={REQUESTS.tvNowOnAir} title="Series on Tv Now" />
+      </>
+    );
   }
 
   return <p>No data found</p>;
