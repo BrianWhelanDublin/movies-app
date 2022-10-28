@@ -5,11 +5,15 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages";
 import Movies from "./pages/Movies/Movies";
 import Series from "./pages/Series/Series";
+import { Nav } from "./components";
 
 function App() {
   return (
     <ThemeProvider theme={myTheme}>
       <GlobalStyles />
+      <header>
+        <Nav />
+      </header>
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
