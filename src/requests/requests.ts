@@ -5,8 +5,12 @@ export const tmdbUrl = `https://api.themoviedb.org/3/`;
 export const REQUESTS: Requests = {
   baseUrl: tmdbUrl,
   trending: `${tmdbUrl}trending/all/day?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
-  movieGenres: `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
-  tvGenres: `https://api.themoviedb.org/3/genre/tv/list?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
+  movieGenres: `${tmdbUrl}genre/movie/list?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
+  tvGenres: `${tmdbUrl}genre/tv/list?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
+  upcommingMovies: `${tmdbUrl}movie/upcoming?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
+  topRatedTv: `${tmdbUrl}tv/top_rated?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
+  moviesNowPlaying: `${tmdbUrl}movie/now_playing?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
+  tvNowOnAir: `${tmdbUrl}tv/on_the_air?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-gb`,
 };
 
 export const IMAGES: Images = {

@@ -68,6 +68,10 @@ export interface Requests {
   trending: Scalars["String"];
   movieGenres: Scalars["String"];
   tvGenres: Scalars["String"];
+  upcommingMovies: Scalars["String"];
+  topRatedTv: Scalars["String"];
+  moviesNowPlaying: Scalars["String"];
+  tvNowOnAir: Scalars["String"];
 }
 
 export interface Images {
