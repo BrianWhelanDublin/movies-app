@@ -1,3 +1,5 @@
 import Home from "./Home/Home";
+import Movies from "./Movies/Movies";
+import Series from "./Series/Series";
 
-export { Home };
+export { Home, Movies, Series };
