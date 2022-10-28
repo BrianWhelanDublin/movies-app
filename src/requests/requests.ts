@@ -11,6 +11,10 @@ export const REQUESTS: Requests = {
   topRatedTv: `${tmdbUrl}tv/top_rated?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
   moviesNowPlaying: `${tmdbUrl}movie/now_playing?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
   tvNowOnAir: `${tmdbUrl}tv/on_the_air?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-gb`,
+  popularMovies: `${tmdbUrl}movie/popular?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US&page=1`,
+  topRatedMovies: `${tmdbUrl}movie/top_rated?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US&page=1`,
+  popularTv: `${tmdbUrl}tv/popular?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US&page=1`,
+  trendingTv: `${tmdbUrl}trending/tv/week?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US`,
 };
 
 export const IMAGES: Images = {

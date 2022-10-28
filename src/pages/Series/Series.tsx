@@ -1,7 +1,7 @@
 import { Genres, MediaItem } from "../../types/types";
 import useFetch from "../../hooks/useFetch";
 import { REQUESTS } from "../../requests/requests";
-import { GenresRow, Loading } from "../../components";
+import { GenresRow, Loading, Row } from "../../components";
 import { randomNumber } from "../../utils/helpers";
 import Hero from "../../components/Hero/Hero";
 
@@ -24,6 +24,10 @@ const Series: React.FC = () => {
       <>
         <Hero media={headerMedia} genres={tvGenres} />
         <GenresRow mediaType="series" />
+        <Row request={REQUESTS.tvNowOnAir} title="Tv on Air Now" />
+        <Row request={REQUESTS.topRatedTv} title="Top Rated Tv" />
+        <Row request={REQUESTS.popularTv} title="Popular Tv" />
+        <Row request={REQUESTS.trendingTv} title="Trending Tv" />
       </>
     );
   }
