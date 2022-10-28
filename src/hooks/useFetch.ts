@@ -71,14 +71,15 @@ const useFetch = <T>(url: string, page: number = 1) => {
         }
 
         const data = await response.json();
+        const dataArray = data?.results || data?.genres;
 
-        cache.current[url] = { data: data?.results, hasMore: data.total_pages > page };
+        cache.current[url] = { data: dataArray, hasMore: data.total_pages > page };
 
         if (cancelRequest.current) return;
 
         dispatch({
           type: "fetched",
-          payload: { data: data?.results, hasMore: data.total_pages > page },
+          payload: { data: dataArray, hasMore: data.total_pages > page },
         });
       } catch (error) {
         if (cancelRequest.current) return;
