@@ -15,6 +15,8 @@ export const HeroWrapper = styled.section<HeroWrapperProps>`
   height: 75vh;
 
   position: relative;
+  display: flex;
+  justify-content: color-interpolation-filters;
 
   &::after {
     content: "";
@@ -38,7 +40,7 @@ export const HeroContent = styled.div<DefaultStyleProps>`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 20% 5%;
+  padding: 0 5%;
   position: relative;
   z-index: 2;
 `;
@@ -59,6 +61,7 @@ export const HeroTitle = styled.h1<DefaultStyleProps>`
   font-weight: ${(props) => props.theme.fontWeights.regular};
   margin-bottom: 20px;
   /* word-break: break-all; */
+  font-weight: 500;
 
   @media (${device.sm}) {
     font-size: 48px;

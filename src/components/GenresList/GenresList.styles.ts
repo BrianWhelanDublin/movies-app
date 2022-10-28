@@ -19,6 +19,7 @@ export const StyledGenresItem = styled.li<DefaultStyleProps>`
   font-weight: ${(props) => props.theme.fontWeights.medium};
   margin-right: 16px;
   position: relative;
+  font-weight: 400;
   &:not(:last-child) {
     &:after {
       content: "";
@@ -33,6 +34,6 @@ export const StyledGenresItem = styled.li<DefaultStyleProps>`
   }
 
   @media (${device.md}) {
-    font-size: 16px;
+    font-size: 20px;
   }
 `;

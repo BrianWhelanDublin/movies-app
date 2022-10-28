@@ -10,8 +10,9 @@ export const MediaInfoList = styled.ul<DefaultStyleProps>`
   font-size: 14px;
   font-weight: ${(props) => props.theme.fontWeights.medium};
   list-style: none;
+  font-weight: 400;
   @media (${device.md}) {
-    font-size: 16px;
+    font-size: 18px;
   }
 `;
 
