@@ -15,7 +15,7 @@ const Movies: React.FC = () => {
 
   if (error) return <p>Error</p>;
 
-  if (data !== undefined) {
+  if (data) {
     const movies = data?.filter((el) => el.media_type === "movie");
     const random = randomNumber(1, movies?.length);
     const headerMedia = movies[random - 1];
