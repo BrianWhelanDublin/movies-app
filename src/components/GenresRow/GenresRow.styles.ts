@@ -11,7 +11,7 @@ export const StyledGenresRow = styled.section<DefaultStyleProps>`
 `;
 
 export const GenreCard = styled.a<DefaultStyleProps>`
-  height: 100%;
+  height: 80px;
   display: block;
   background: rgba(255, 250, 250, 0.2);
   border-radius: 5px;
