@@ -11,7 +11,7 @@ export const StyledNav = styled.nav<DefaultStyleProps>`
   z-index: 10;
   display: flex;
   flex-direction: row;
-  padding: 20px 40px;
+  padding: 20px 7.5%;
 
   @media (${device.sm}) {
     padding: 40px;
@@ -40,7 +40,7 @@ const ItemStyle = css`
   padding: 4px 12px;
   border-radius: 8px;
   transition: all 0.2s ease-in-out;
-  margin: 0 16px;
+  background-color: rgba(0, 0, 0, 0.4);
   @media (${device.sm}) {
     font-size: 16px;
     padding: 8px 18px;
@@ -58,8 +58,16 @@ const ItemStyle = css`
 
 export const NavItem = styled.li<DefaultStyleProps>`
   ${ItemStyle}
+  margin: 0 4px;
+  @media (${device.sm}) {
+    margin: 0 16px;
+  }
 `;
 
 export const Logo = styled.div<DefaultStyleProps>`
   ${ItemStyle}
+  margin-right:32px;
+  @media (${device.sm}) {
+    margin-right: 0;
+  }
 `;
