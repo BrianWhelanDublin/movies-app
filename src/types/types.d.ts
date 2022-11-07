@@ -76,6 +76,8 @@ export interface Requests {
   topRatedMovies: Scalars["String"];
   popularTv: Scalars["String"];
   trendingTv: Scalars["String"];
+  moviesByGenre: Scalars["String"];
+  tvByGenre: Scalars["String"];
 }
 
 export interface Images {

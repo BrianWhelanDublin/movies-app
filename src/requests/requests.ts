@@ -11,10 +11,12 @@ export const REQUESTS: Requests = {
   topRatedTv: `${tmdbUrl}tv/top_rated?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
   moviesNowPlaying: `${tmdbUrl}movie/now_playing?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
   tvNowOnAir: `${tmdbUrl}tv/on_the_air?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-gb`,
-  popularMovies: `${tmdbUrl}movie/popular?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US&page=1`,
-  topRatedMovies: `${tmdbUrl}movie/top_rated?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US&page=1`,
-  popularTv: `${tmdbUrl}tv/popular?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US&page=1`,
+  popularMovies: `${tmdbUrl}movie/popular?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US`,
+  topRatedMovies: `${tmdbUrl}movie/top_rated?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US`,
+  popularTv: `${tmdbUrl}tv/popular?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US`,
   trendingTv: `${tmdbUrl}trending/tv/week?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US`,
+  moviesByGenre: `${tmdbUrl}discover/movie?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US&sort_by=popularity.desc&with_genres=`,
+  tvByGenre: `${tmdbUrl}discover/tv?api_key=${process.env.REACT_APP_IMDB_API_KEY}&language=en-US&sort_by=popularity.desc&with_genres=`,
 };
 
 export const IMAGES: Images = {
