@@ -14,7 +14,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   border-radius: 8px;
   transition: all 0.2s ease-in;
   font-size: 12px;
-  background-color: ${(props) => (props.varient === "filled" ? props.theme.colors.white : "transparent")};
+  background-color: ${(props) => (props.varient === "filled" ? props.theme.colors.white : "rgba(0,0,0,.4)")};
   color: ${(props) => (props.varient === "filled" ? props.theme.colors.black : props.theme.colors.white)};
 
   @media (${device.sm}) {
