@@ -11,8 +11,8 @@ export const HeroWrapper = styled.section<HeroWrapperProps>`
   background-repeat: none;
   background-size: cover;
   width: 100vw;
-  min-height: 500px;
-  height: 75vh;
+  min-height: 400px;
+  height: 65vh;
 
   position: relative;
   display: flex;
@@ -32,6 +32,7 @@ export const HeroWrapper = styled.section<HeroWrapperProps>`
   @media (${device.sm}) {
     height: 80vh;
     min-height: 600px;
+    max-height: 700px;
   }
 `;
 
