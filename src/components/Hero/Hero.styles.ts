@@ -48,7 +48,8 @@ export const HeroContent = styled.div<DefaultStyleProps>`
 export const HeroSubtitle = styled.p<DefaultStyleProps>`
   color: ${(props) => props.theme.colors.brand1};
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: ${(props) => props.theme.fontWeights.extrabold};
+  margin-bottom: 0;
   @media (${device.sm}) {
     font-size: 20px;
   }
@@ -58,10 +59,10 @@ export const HeroTitle = styled.h1<DefaultStyleProps>`
   font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 10px;
-  font-weight: ${(props) => props.theme.fontWeights.regular};
+  font-weight: ${(props) => props.theme.fontWeights.bold};
   margin-bottom: 20px;
   /* word-break: break-all; */
-  font-weight: 500;
+
   max-width: 1200px;
 
   @media (${device.sm}) {

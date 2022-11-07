@@ -16,10 +16,10 @@ export const StyledGenresList = styled.ul<DefaultStyleProps>`
 
 export const StyledGenresItem = styled.li<DefaultStyleProps>`
   font-size: 16px;
-  font-weight: ${(props) => props.theme.fontWeights.medium};
+  font-weight: ${(props) => props.theme.fontWeights.regular};
   margin-right: 16px;
   position: relative;
-  font-weight: 400;
+
   &:not(:last-child) {
     &:after {
       content: "";

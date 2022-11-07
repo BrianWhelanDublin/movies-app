@@ -8,9 +8,9 @@ export const MediaInfoList = styled.ul<DefaultStyleProps>`
   width: 200px;
   justify-content: space-between;
   font-size: 14px;
-  font-weight: ${(props) => props.theme.fontWeights.medium};
+  font-weight: ${(props) => props.theme.fontWeights.regular};
   list-style: none;
-  font-weight: 400;
+
   @media (${device.md}) {
     font-size: 18px;
   }
