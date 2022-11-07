@@ -5,6 +5,9 @@ import { REQUESTS } from "../../requests/requests";
 import { Genres as GenresType, MediaItem } from "../../types/types";
 import { useNavigate } from "react-router-dom";
 import TextHeader from "../../components/TextHeader/TextHeader";
+import { ResultsWrapper } from "../../components";
+import GenresSelect from "../../components/GenresSelect/GenresSelect";
+import Results from "../../components/Results/Results";
 
 const Genres: React.FC = () => {
   const params = useParams();
@@ -42,6 +45,11 @@ const Genres: React.FC = () => {
   return (
     <>
       <TextHeader title={`Results for ${currentGenre?.name}`} />
+      <ResultsWrapper>
+        <GenresSelect genres={genresList} currentGenre={currentGenre} handleChange={handleChange} handleClick={handleClick} />
+
+        <Results items={data} loading={loading} setPage={setPage} hasMore={hasMore} mediaType={params.type} />
+      </ResultsWrapper>
     </>
   );
 };
