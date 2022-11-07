@@ -9,7 +9,7 @@ export const StyledGenresSelect = styled.select<DefaultStyleProps>`
   border: 1px solid ${(props) => props.theme.colors.white};
   padding: 8px;
   border-radius: 8px;
-  margin-top: 24px;
+  margin: 8px auto;
   width: 300px;
   -webkit-appearance: none;
   -moz-appearance: none;
