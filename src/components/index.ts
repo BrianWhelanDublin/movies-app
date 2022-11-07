@@ -6,3 +6,4 @@ export { default as Nav } from "./Nav/Nav";
 export { default as Row } from "./Row/Row";
 export { default as Slider } from "./Slider/Slider";
 export { default as GenresRow } from "./GenresRow/GenresRow";
+export { default as ResultsWrapper } from "./ResultsWrapper/ResultsWrapper";
