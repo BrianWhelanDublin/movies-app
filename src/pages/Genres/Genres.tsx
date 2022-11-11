@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { REQUESTS } from "../../requests/requests";
-import { Genres as GenresType, MediaItem } from "../../types/types";
+import { GenreRequest, Genres as GenresType, MediaItem, MediaRequest } from "../../types/types";
 import { useNavigate } from "react-router-dom";
 import TextHeader from "../../components/TextHeader/TextHeader";
 import { ResultsWrapper } from "../../components";
 import GenresSelect from "../../components/GenresSelect/GenresSelect";
 import Results from "../../components/Results/Results";
+import useScrollPagination from "../../hooks/useScrollPagination";
 
 const Genres: React.FC = () => {
   const params = useParams();
@@ -17,10 +18,10 @@ const Genres: React.FC = () => {
   const request = `${params?.type === "movie" ? REQUESTS.moviesByGenre : REQUESTS.tvByGenre}${genre}`;
   const genreRequest = params.type === "movie" ? REQUESTS.movieGenres : REQUESTS.tvGenres;
 
-  const { data, error, loading, hasMore } = useFetch<MediaItem>(request, page);
-  const { data: genresList } = useFetch<GenresType>(genreRequest);
+  const { data, error, loading, hasMore } = useScrollPagination<MediaItem>(request, page);
+  const { data: genresList } = useFetch<GenreRequest>(genreRequest);
 
-  const currentGenre = genresList?.filter((el) => `${el?.id}` === (genre as string))[0];
+  const currentGenre = genresList?.genres?.filter((el) => `${el?.id}` === (genre as string))[0];
 
   const navigate = useNavigate();
   const handleChange = (e: React.FormEvent<HTMLSelectElement>) => {
@@ -46,7 +47,12 @@ const Genres: React.FC = () => {
     <>
       <TextHeader title={`Results for ${currentGenre?.name}`} />
       <ResultsWrapper>
-        <GenresSelect genres={genresList} currentGenre={currentGenre} handleChange={handleChange} handleClick={handleClick} />
+        <GenresSelect
+          genres={genresList?.genres as GenresType[]}
+          currentGenre={currentGenre as GenresType}
+          handleChange={handleChange}
+          handleClick={handleClick}
+        />
 
         <Results items={data} loading={loading} setPage={setPage} hasMore={hasMore} mediaType={params.type} />
       </ResultsWrapper>
