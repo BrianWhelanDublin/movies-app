@@ -1,40 +1,32 @@
 import { useReducer, useEffect, useRef } from "react";
 
 interface State<T> {
-  data: Array<T>;
+  data?: T;
   error?: Error;
   loading?: boolean;
-  hasMore?: boolean;
 }
 
-type Cache = { [url: string]: { data: Array<any>; hasMore: boolean } };
+type Cache<T> = { [url: string]: T };
 
-type Action =
-  | { type: "loading" }
-  | { type: "fetched"; payload: { data: Array<any>; hasMore: boolean } }
-  | { type: "error"; payload: Error }
-  | { type: "reset" };
+type Action<T> = { type: "loading" } | { type: "fetched"; payload: T } | { type: "error"; payload: Error };
 
-const useFetch = <T>(url: string, page: number = 1) => {
-  const cache = useRef<Cache>({});
+const useFetch = <T = unknown>(url: string, page: number = 1) => {
+  const cache = useRef<Cache<T>>({});
 
   const cancelRequest = useRef<boolean>(false);
 
   const initialState: State<T> = {
     error: undefined,
-    data: [],
+    data: undefined,
     loading: true,
-    hasMore: false,
   };
 
-  const paginatedReducer = (state: State<T> = initialState, action: Action): State<T> => {
+  const fetchReducer = (state: State<T> = initialState, action: Action<T>): State<T> => {
     switch (action.type) {
-      case "reset":
-        return { ...initialState };
       case "loading":
-        return { ...state, loading: true };
+        return { ...initialState, loading: true };
       case "fetched":
-        return { ...state, loading: false, data: [...new Set([...state.data, ...action.payload.data])], hasMore: action.payload.hasMore };
+        return { ...initialState, loading: false, data: action.payload };
       case "error":
         return { ...state, error: action.payload };
       default:
@@ -42,16 +34,12 @@ const useFetch = <T>(url: string, page: number = 1) => {
     }
   };
 
-  const [state, dispatch] = useReducer(paginatedReducer, initialState);
+  const [state, dispatch] = useReducer(fetchReducer, initialState);
 
   useEffect(() => {
     if (!url) return;
 
     cancelRequest.current = false;
-
-    if (page === 1) {
-      dispatch({ type: "reset" });
-    }
 
     const fetchData = async () => {
       dispatch({ type: "loading" });
@@ -71,15 +59,14 @@ const useFetch = <T>(url: string, page: number = 1) => {
         }
 
         const data = await response.json();
-        const dataArray = data?.results || data?.genres;
 
-        cache.current[url] = { data: dataArray, hasMore: data.total_pages > page };
+        cache.current[url] = data;
 
         if (cancelRequest.current) return;
 
         dispatch({
           type: "fetched",
-          payload: { data: dataArray, hasMore: data.total_pages > page },
+          payload: data,
         });
       } catch (error) {
         if (cancelRequest.current) return;
