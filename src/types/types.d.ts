@@ -118,6 +118,14 @@ export interface Images {
 /**
  * Media item type for Movie and Tv Series
  */
+
+export interface MediaRequest {
+  page: Scalars["Int"];
+  results: Array<MediaItem>;
+  total_pages: Scalars["Int"];
+  total_results: Scalars["Int"];
+}
+
 export interface MediaItem {
   adult?: Maybe<Scalars["Boolean"]>;
   backdrop_path?: Maybe<Scalars["String"]>;
@@ -140,7 +148,60 @@ export interface MediaItem {
   video?: Maybe<Scalars["Boolean"]>;
 }
 
+export interface MediaDetails {
+  adult?: Maybe<Scalars["Boolean"]>;
+  backdrop_path?: Maybe<Scalars["String"]>;
+  genres?: Maybe<Array<Genres>>;
+  homepage?: Maybe<Scalars["String"]>;
+  id?: Maybe<Scalars["Int"]>;
+  original_language?: Maybe<Scalars["String"]>;
+  overview?: Maybe<Scalars["String"]>;
+  popularity?: Maybe<Scalars["Int"]>;
+  poster_path?: Maybe<Scalars["String"]>;
+  production_companies?: Maybe<Array<Company>>;
+  production_countries?: Maybe<Array<Country>>;
+  vote_average: Maybe<Scalars["Int"]>;
+  vote_count: Maybe<Scalars["Int"]>;
+  spoken_languages?: Maybe<Array<Language>>;
+  status: Maybe<Scalars["String"]>;
+  tagline: Maybe<Scalars["String"]>;
+}
+
+export interface MovieDetails extends MediaDetails {
+  belongs_to_collection: Maybe<Collection>;
+  budget?: Maybe<Scalars["Int"]>;
+  imdb_id?: Maybe<Scalars["String"]>;
+  original_title?: Maybe<Scalars["String"]>;
+  release_date?: Maybe<Scalars["String"]>;
+  revenue?: Maybe<Scalars["Int"]>;
+  runtime?: Maybe<Scalars["Int"]>;
+  title?: Maybe<Scalars["String"]>;
+  video?: Maybe<Scalars["Boolean"]>;
+}
+
+export interface TvDetails extends MediaDetails {
+  created_by?: Maybe<Array<Person>>;
+  episode_run_time?: Maybe<Array<number>>;
+  first_air_date?: Maybe<Scalars["String"]>;
+  in_production?: Maybe<Scalars["Boolean"]>;
+  languages?: Maybe<Array<Scalars["String"]>>;
+  last_air_date?: Maybe<Episode>;
+  name?: Maybe<Array<Scalars["String"]>>;
+  networks?: Maybe<Array<Network>>;
+  next_episode_to_air?: Maybe<Episode>;
+  number_of_episodes?: Maybe<Scalars["Int"]>;
+  number_of_seasons?: Maybe<Scalars["Int"]>;
+  origin_country?: Maybe<Array<Scalars["String"]>>;
+  original_name?: Maybe<Scalars["String"]>;
+  seasons?: Maybe<Array<Season>>;
+  type: Maybe<Scalars["String"]>;
+}
+
 export interface Genres {
   id: Scalars["Int"];
   name: Scalars["String"];
+}
+
+export interface GenreRequest {
+  genres: Array<Genres>;
 }
