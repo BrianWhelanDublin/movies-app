@@ -1,6 +1,6 @@
 import useFetch from "../../hooks/useFetch";
 
-import { MediaItem } from "../../types/types";
+import { MediaItem, MediaRequest } from "../../types/types";
 import Loading from "../Loading/Loading";
 import MediaCard from "../MediaCard/MediaCard";
 import Slider from "../Slider/Slider";
@@ -12,7 +12,7 @@ interface RowProps {
 }
 
 const Row: React.FC<RowProps> = ({ request, title }) => {
-  const { data, error, loading } = useFetch<MediaItem>(request);
+  const { data, error, loading } = useFetch<MediaRequest>(request);
 
   const mediaType = request.includes("tv") ? "tv" : "movie";
 
@@ -29,7 +29,7 @@ const Row: React.FC<RowProps> = ({ request, title }) => {
 
       {data && (
         <Slider>
-          {data.map((el) => (
+          {data.results.map((el) => (
             <MediaCard media={el} key={el.id} href={`/${el.media_type ?? mediaType}/${el.id}`} />
           ))}
         </Slider>
