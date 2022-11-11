@@ -22,7 +22,6 @@ const Results = React.memo<ResultsProps>(({ items, loading, setPage, hasMore, me
       observer.current = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            console.log(entry);
             if (entry.isIntersecting && hasMore) {
               setPage((prev) => prev + 1);
             }
