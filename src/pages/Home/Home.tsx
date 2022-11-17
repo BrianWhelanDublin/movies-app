@@ -1,9 +1,8 @@
 import { GenreRequest, Genres, MediaRequest } from "../../types/types";
 import useFetch from "../../hooks/useFetch";
 import { REQUESTS } from "../../requests/requests";
-import { Loading, Row } from "../../components";
+import { Loading, Row, Hero } from "../../components";
 import { randomNumber } from "../../utils/helpers";
-import Hero from "../../components/Hero/Hero";
 
 const Home: React.FC = () => {
   const { data, error, loading } = useFetch<MediaRequest>(REQUESTS.trending, 1);

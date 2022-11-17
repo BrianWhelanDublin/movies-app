@@ -2,12 +2,9 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { REQUESTS } from "../../requests/requests";
-import { GenreRequest, Genres as GenresType, MediaItem, MediaRequest } from "../../types/types";
+import { GenreRequest, Genres as GenresType, MediaItem } from "../../types/types";
 import { useNavigate } from "react-router-dom";
-import TextHeader from "../../components/TextHeader/TextHeader";
-import { ResultsWrapper } from "../../components";
-import GenresSelect from "../../components/GenresSelect/GenresSelect";
-import Results from "../../components/Results/Results";
+import { ResultsWrapper, TextHeader, GenresSelect, Results } from "../../components";
 import useScrollPagination from "../../hooks/useScrollPagination";
 
 const Genres: React.FC = () => {

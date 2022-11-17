@@ -2,8 +2,9 @@ import { IMAGES } from "../../requests/requests";
 import { Genres, MediaItem } from "../../types/types";
 import Button from "../Button/Button";
 import GenresList from "../GenresList/GenresList";
+import HeaderWrapper from "../HeaderWrapper/HeaderWrapper";
 import MediaInfo from "../MediaInfo/MediaInfo";
-import { HeroContent, HeroSubtitle, HeroTitle, HeroWrapper } from "./Hero.styles";
+import { HeroContent, HeroSubtitle, HeroTitle } from "./Hero.styles";
 
 interface HeroProps {
   media: MediaItem;
@@ -23,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({ media, genres }) => {
   }
 
   return (
-    <HeroWrapper background={background}>
+    <HeaderWrapper background={background}>
       <HeroContent>
         <HeroSubtitle>Spotlight</HeroSubtitle>
         <HeroTitle>{title}</HeroTitle>
@@ -31,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ media, genres }) => {
         {mediaGenres.length && <GenresList genres={mediaGenres} mediaType={media?.media_type as string} />}
         <Button href={`${media?.media_type === "tv" ? "tv" : "movie"}/${media?.id}`}>Find Out More</Button>
       </HeroContent>
-    </HeroWrapper>
+    </HeaderWrapper>
   );
 };
 
