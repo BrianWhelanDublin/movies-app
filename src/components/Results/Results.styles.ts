@@ -8,7 +8,6 @@ export const ResultsContainer = styled.div<DefaultStyleProps>`
   grid-gap: 20px;
   padding: 5%;
   position: relative;
-  z-index: -1;
 
   @media (${device.sm}) {
     grid-template-columns: repeat(3, 1fr);
