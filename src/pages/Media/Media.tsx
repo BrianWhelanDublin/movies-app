@@ -10,6 +10,8 @@ const Media: React.FC = () => {
   let request = `${REQUESTS.baseUrl}${params.type}/${params.id}?api_key=${process.env.REACT_APP_IMDB_API_KEY}`;
   const { data, error, loading } = useFetch<MovieDetails | TvDetails>(request);
 
+  console.log(data);
+
   if (loading) {
     return <Loading />;
   }

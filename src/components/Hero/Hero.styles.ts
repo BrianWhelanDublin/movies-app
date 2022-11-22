@@ -2,40 +2,6 @@ import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
 import { DefaultStyleProps } from "../../types/types";
 
-// interface HeroWrapperProps extends DefaultStyleProps {
-//   background: string;
-// }
-
-// export const HeroWrapper = styled.section<HeroWrapperProps>`
-//   background: url(${(props) => props.background});
-//   background-repeat: none;
-//   background-size: cover;
-//   width: 100vw;
-//   min-height: 400px;
-//   height: 65vh;
-
-//   position: relative;
-//   display: flex;
-//   justify-content: color-interpolation-filters;
-
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     right: 0;
-//     left: 0;
-//     z-index: 1;
-//     background: ${(props) => props.theme.gradient};
-//   }
-
-//   @media (${device.sm}) {
-//     height: 80vh;
-//     min-height: 600px;
-//     max-height: 700px;
-//   }
-// `;
-
 export const HeroContent = styled.div<DefaultStyleProps>`
   display: flex;
   flex-direction: column;
@@ -56,23 +22,23 @@ export const HeroSubtitle = styled.p<DefaultStyleProps>`
   }
 `;
 
-export const HeroTitle = styled.h1<DefaultStyleProps>`
-  font-size: 28px;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  font-weight: ${(props) => props.theme.fontWeights.bold};
-  margin-bottom: 20px;
-  /* word-break: break-all; */
+// export const HeroTitle = styled.h1<DefaultStyleProps>`
+//   font-size: 28px;
+//   text-transform: uppercase;
+//   letter-spacing: 10px;
+//   font-weight: ${(props) => props.theme.fontWeights.bold};
+//   margin-bottom: 20px;
+//   /* word-break: break-all; */
 
-  max-width: 1200px;
+//   max-width: 1200px;
 
-  @media (${device.sm}) {
-    font-size: 48px;
-    margin-bottom: 10px;
-  }
+//   @media (${device.sm}) {
+//     font-size: 48px;
+//     margin-bottom: 10px;
+//   }
 
-  @media (${device.md}) {
-    font-size: 66px;
-    margin-bottom: 30px;
-  }
-`;
+//   @media (${device.md}) {
+//     font-size: 66px;
+//     margin-bottom: 30px;
+//   }
+// `;

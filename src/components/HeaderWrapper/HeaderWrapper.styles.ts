@@ -11,8 +11,8 @@ export const StyledHeaderWrapper = styled.section<HeaderWrapperProps>`
   background-repeat: none;
   background-size: cover;
   width: 100vw;
-  min-height: 400px;
-  height: 65vh;
+  min-height: 65vh;
+  /* height: 65vh; */
 
   position: relative;
   display: flex;
@@ -30,8 +30,6 @@ export const StyledHeaderWrapper = styled.section<HeaderWrapperProps>`
   }
 
   @media (${device.sm}) {
-    height: 80vh;
-    min-height: 600px;
-    max-height: 700px;
+    min-height: 80vh;
   }
 `;

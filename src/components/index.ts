@@ -2,6 +2,7 @@ export { default as Button } from "./Button/Button";
 export { default as GenresList } from "./GenresList/GenresList";
 export { default as GenresRow } from "./GenresRow/GenresRow";
 export { default as GenresSelect } from "./GenresSelect/GenresSelect";
+export { default as HeaderTitle } from "./HeaderTitle/HeaderTitle";
 export { default as HeaderWrapper } from "./HeaderWrapper/HeaderWrapper";
 export { default as Hero } from "./Hero/Hero";
 export { default as Loading } from "./Loading/Loading";
